@@ -1,73 +1,7 @@
 = scout_api
 
-A library for interacting with Scout[http://scoutapp.com], a hosted server monitoring service. 
-Query for metric data, manage servers, and more.
+This gem is no longer supported. See https://server-monitor.readme.io/docs/api for the Pingdom Server Monitor API
 
-== Getting Started 
-
-Install the gem if you haven't already:
-
-  gem install scout_api
-
-Require the gem and authenticate to get your Scout on (the example uses https://scoutapp.com/youraccountname/ as the account URL):
-
-  require 'scout_api'
-  scout = Scout::Account.new('youraccountname', 'your@awesome.com', 'sekret')
-
-== Basics
-
-You can query for the following high-level objects:
-
-* {Scout::Server}
-* {Scout::Metric}
-
-Each of the classes have Rails-like finder methods. For example:
-
-  # all servers
-  Scout::Server.all
-
-  # first server
-  Scout::Server.first
-
-  # first metric with ID=1
-  Scout::Metric.first(1)
-
-== Metrics
-
-Access your metric data stored in Scout. You can retrieve data for a specific metric or aggregated metrics. For example:
-
-  # average value of the metric with ID=1 over the past hour
-  Scout::Metric.average(1)
-
-  # maximum rate of insert queries over the previous 24 hours
-  Scout::Server.first(:name => "DB Server").metrics.maximum(:name => 'inserts', 
-  :start => Time.now.utc-(24*3600)*2,:end => Time.now.utc-(24*3600) )
-
-
-== Server Management
-
-Create and delete servers:
-  
-  # create a server using the server with id=6 as the template.
-  Scout::Server.create('heavy metal',:id => 6) => <#Scout::Server>
-  
-  # delete the server with id=10
-  Scout::Server.delete(10)
-
-== Ruby Compatibility
-
-scout_api has been tested against Ruby 1.8.7, and Ruby 1.9.2.
-
-== Note on Patches/Pull Requests
-
-* Fork the project[https://github.com/scoutapp/scout-api].
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a
-  commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
 
 == Copyright
 
