@@ -1,8 +1,4 @@
-= scout_api
+= Scout APM
 
-This gem is no longer supported. See https://server-monitor.readme.io/docs/api for the Pingdom Server Monitor API
+See [Scout Application Performance Monitoring](http://scoutapp.com).
 
-
-== Copyright
-
-Copyright (c) 2011 Jesse Newland, Derek Haynes. See LICENSE for details.
